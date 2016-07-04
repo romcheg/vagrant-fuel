@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
 
         fuel_dev.vm.provider :xhyve do |xhyve|
             xhyve.cpus = 2
-            xhyve.memory = "1G"
+            xhyve.memory = "2G"
         end
 
         fuel_dev.vm.provision "file", source: "~/.config/git/ignore", destination: "~/.config/git/ignore"
