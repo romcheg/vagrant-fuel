@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
             xhyve.memory = "1G"
         end
 
+        fuel_dev.vm.provision "file", source: "~/.config/git/ignore", destination: "~/.config/git/ignore"
         fuel_dev.vm.provision "shell", path: "provision.sh"
     end
 

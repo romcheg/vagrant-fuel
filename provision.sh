@@ -23,6 +23,8 @@ echo 'source /usr/local/bin/virtualenvwrapper_lazy.sh' >> .bashrc
 chsh -s `which zsh` vagrant
 curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed -e '83,96d' | sudo -u vagrant bash
 
+sudo -u vagrant git config --global core.excludesfile ~/.config/git/ignore
+
 sudo -u postgres psql << EOF
      CREATE ROLE nailgun WITH SUPERUSER CREATEDB CREATEROLE LOGIN PASSWORD 'nailgun';
      CREATE ROLE openstack_citest WITH SUPERUSER CREATEDB CREATEROLE LOGIN PASSWORD 'insecure_slave';
